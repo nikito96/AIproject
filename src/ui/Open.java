@@ -36,6 +36,8 @@ public class Open extends JFrame {
 		JButton btnOpen = new JButton("Open");
 		btnOpen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				OpenFile openFile = new OpenFile();
+				openFile.openFile(namePathTextField.getText());
 			}
 		});
 		btnOpen.setBounds(244, 52, 89, 23);
