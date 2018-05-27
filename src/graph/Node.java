@@ -90,13 +90,13 @@ public class Node {
 
 	public void paint(Graphics g) {
 		g.setColor(Color.BLACK);
-		g.drawString(name, x * 15, y * 15);
-		g.drawOval(x * 15, y  * 15, 30, 30);
+		g.drawString(name, x * 30, y * 30);
+		g.drawOval(x * 30, y  * 30, 30, 30);
 		g.setColor(Color.BLUE);
-		g.fillOval(x * 15, y * 15, 30, 30);
+		g.fillOval(x * 30, y * 30, 30, 30);
 		for(Link l : links) {
 			g.setColor(Color.BLACK);
-			g.drawLine((this.x * 15) + 15, (this.y * 15) + 15, (l.getTo().getX() * 15) + 15, (l.getTo().getY() * 15) + 15);
+			g.drawLine((this.x * 30) + 15, (this.y * 30) + 15, (l.getTo().getX() * 30) + 15, (l.getTo().getY() * 30) + 15);
 		}
 	}
 }
