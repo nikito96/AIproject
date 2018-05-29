@@ -16,6 +16,7 @@ public class Open extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField namePathTextField;
+	private Panel panel = Panel.getInstance();
 
 	/**
 	 * Create the frame.
@@ -38,6 +39,8 @@ public class Open extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				OpenFile openFile = new OpenFile();
 				openFile.openFile(namePathTextField.getText());
+				panel.repaint();
+				
 			}
 		});
 		btnOpen.setBounds(244, 52, 89, 23);
