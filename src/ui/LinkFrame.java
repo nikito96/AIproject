@@ -92,7 +92,7 @@ public class LinkFrame extends JFrame {
 		contentPane.add(lblTo);
 	}
 	
-	void fillCombo(JComboBox jcb){
+	private void fillCombo(JComboBox jcb){
 		for(Node item : graph.getHashMap().values()) {
 			jcb.addItem(item.getName());
 		}

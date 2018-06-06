@@ -36,8 +36,6 @@ public class OpenFile {
 		graph.getHashMap().clear();
 		
 		ArrayList<String> linesArrayList = new ArrayList<String>();
-		ArrayList<String> nodesArrayList = new ArrayList<String>();
-		ArrayList<String> linksArrayList = new ArrayList<String>();
 		
 		List<String> list = readFileInList(fileName);
 		for(int i = 0; i < list.size(); i++) {
@@ -52,30 +50,23 @@ public class OpenFile {
 				}
 			}
 			if(count == 3) {
-				nodesArrayList.add(s);
+				String[] node = s.split(",");
+				
+				graph.addNode(new Node(node[0], Integer.parseInt(node[1]), 
+						Integer.parseInt(node[2]), Integer.parseInt(node[3].replace(";", ""))));
 			}else {
-				linksArrayList.add(s);
+				boolean flag;
+				String[] link = s.split(",");
+				
+				if(link[4].replace(";", "").equals("T")) {
+					flag = true;
+				}else {
+					flag = false;
+				}
+				
+				graph.addTwoWayRoute(graph.getHashMap().get(link[0]),
+						graph.getHashMap().get(link[1]), Double.parseDouble(link[2]), lt.valueOf(link[3]), flag);
 			}
-		}
-		
-		for(String node : nodesArrayList) {
-			String[] nodes = node.split(",");
-			
-			graph.addNode(new Node(nodes[0], Integer.parseInt(nodes[1]), 
-					Integer.parseInt(nodes[2]), Integer.parseInt(nodes[3].replace(";", ""))));
-		}
-		for(String link : linksArrayList) {
-			boolean flag;
-			String[] links = link.split(",");
-			
-			if(links[4].replace(";", "").equals("T")) {
-				flag = true;
-			}else {
-				flag = false;
-			}
-			
-			graph.addTwoWayRoute(graph.getHashMap().get(links[0]),
-					graph.getHashMap().get(links[1]), Double.parseDouble(links[2]), lt.valueOf(links[3]), flag);
 		}
 	}
 }

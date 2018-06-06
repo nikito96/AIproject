@@ -1,5 +1,6 @@
 package ui;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -8,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -50,7 +52,8 @@ public class Frame extends JFrame {
 		contentPane.setLayout(null);
 		
 		panel.setLocation(10, 101);
-		panel.setSize(790, 480);
+		panel.setSize(825, 450);
+		panel.setBorder(BorderFactory.createLineBorder(Color.black));
 		contentPane.add(panel);
 		
 		nameTextField = new JTextField();
@@ -122,7 +125,7 @@ public class Frame extends JFrame {
 			}
 		});
 		
-		btnSearchPanel.setBounds(639, 19, 119, 23);
+		btnSearchPanel.setBounds(688, 19, 119, 23);
 		contentPane.add(btnSearchPanel);
 		
 		JButton btnSave = new JButton("Save");
@@ -132,7 +135,7 @@ public class Frame extends JFrame {
 				save.setVisible(true);
 			}
 		});
-		btnSave.setBounds(768, 19, 70, 23);
+		btnSave.setBounds(688, 53, 70, 23);
 		contentPane.add(btnSave);
 		
 		JButton btnOpen = new JButton("Open");
