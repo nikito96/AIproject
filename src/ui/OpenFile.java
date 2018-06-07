@@ -53,7 +53,7 @@ public class OpenFile {
 				String[] node = s.split(",");
 				
 				graph.addNode(new Node(node[0], Integer.parseInt(node[1]), 
-						Integer.parseInt(node[2]), Integer.parseInt(node[3].replace(";", ""))));
+						Integer.parseInt(node[2]), Double.parseDouble(node[3].replace(";", ""))));
 			}else {
 				boolean flag;
 				String[] link = s.split(",");
@@ -64,7 +64,7 @@ public class OpenFile {
 					flag = false;
 				}
 				
-				graph.addTwoWayRoute(graph.getHashMap().get(link[0]),
+				graph.addRoute(graph.getHashMap().get(link[0]),
 						graph.getHashMap().get(link[1]), Double.parseDouble(link[2]), lt.valueOf(link[3]), flag);
 			}
 		}

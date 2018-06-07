@@ -75,7 +75,7 @@ public class LinkFrame extends JFrame {
 		JButton btnAdd = new JButton("Add");
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				graph.addTwoWayRoute(graph.getHashMap().get(fromComboBox.getSelectedItem()), graph.getHashMap().get(toComboBox.getSelectedItem()),
+				graph.addRoute(graph.getHashMap().get(fromComboBox.getSelectedItem()), graph.getHashMap().get(toComboBox.getSelectedItem()),
 						Double.parseDouble(lenghtTextField.getText()), (LinkType) typeComboBox.getSelectedItem(), chckbxTwoWay.isSelected());
 				panel.repaint();
 			}

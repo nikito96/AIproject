@@ -22,7 +22,6 @@ public class SearchByLength implements ISearch {
 		for(Link l : getNodeFromGraph(from).getLinks()) {
 			SearchFrame.resultTextArea.append("Checking: " + from + "->" + l.getTo().getName() + "->length: " + l.getLength() + "\n");
 			if(l.getTo().getName().equals(to)) {
-				
 				SearchFrame.resultTextArea.append("Path found!\n");
 				if(l.getLength() < shortestLength || shortestLength == -1) {
 					shortestLength = l.getLength();
@@ -36,6 +35,7 @@ public class SearchByLength implements ISearch {
 				searchLink(passedThrough, length, l);
 			}
 		}
+		
 		if(shortestLength > 0) {
 			SearchFrame.resultTextArea.append("Shortest path: " + shortestPath + "length: " + shortestLength + "\n");
 			return true;
@@ -68,7 +68,6 @@ public class SearchByLength implements ISearch {
 							shortestPath+=s+"->";
 						}
 					} 
-					
 				}else{
 					searchLink(newPassedThrough, newLength, l);
 				}

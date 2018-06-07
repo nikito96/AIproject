@@ -9,16 +9,11 @@ public class Node {
 	private String name;
 	private int x;
 	private int y;
-	private int weight;
-	
-	private boolean isExpanded;
-	private boolean isTested;
-	public int depth = -1;
-	public double distanceToEnd;
+	private double weight;
 	
 	private ArrayList<Link> links = new ArrayList<Link>();
 	
-	public Node(String name, int x, int y, int weight) {
+	public Node(String name, int x, int y, double weight) {
 		this.name = name;
 		this.x = x;
 		this.y = y;
@@ -49,7 +44,7 @@ public class Node {
 		this.y = y;
 	}
 
-	public int getWeight() {
+	public double getWeight() {
 		return weight;
 	}
 
@@ -63,29 +58,6 @@ public class Node {
 
 	public void setLinks(ArrayList<Link> links) {
 		this.links = links;
-	}
-	
-	public boolean isExpanded() {
-		return isExpanded;
-	}
-
-	public void setExpanded(boolean isExpanded) {
-		this.isExpanded = isExpanded;
-	}
-
-	public boolean isTested() {
-		return isTested;
-	}
-
-	public void setTested(boolean isTested) {
-		this.isTested = isTested;
-	}
-	
-	public void resetNode() {
-		isExpanded = false;
-		isTested = false;
-		depth = -1;
-		distanceToEnd = 0;
 	}
 
 	public void paint(Graphics g) {
